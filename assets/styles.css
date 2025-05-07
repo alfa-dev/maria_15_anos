@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kenao&display=swap');
+
+:root {
+  --primary-black: #1a1a1a;
+  --silver: #848282;
+  --silver-light: #bbb8b8;
+  --accent: #ff4081;
+}
+
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--primary-black);
+  color: var(--silver-light);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Glitter Text Effect */
+h1, h2, h3 {
+  font-family: "Kenao", cursive;
+  line-height: 1;
+}
+
+h1 {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  font-family: "Kenao", cursive;
+  font-size: 5rem;
+  background-image: linear-gradient(
+    90deg,
+    white 0%,
+    var(--silver) 15%,
+    white 20%,
+    var(--silver) 5%,
+    white 100%
+  );
+  background-size: 200% auto;
+  color: rgba(255, 255, 255, 0.3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glitter 6s linear infinite;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h3:first-letter {
+  font-size: 3.5rem;
+}
+
+h2 {
+  margin-top: 0rem;
+  font-size: 2rem;
+  font-family: "Kenao", cursive;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-family: "Kenao", cursive;
+}
+
+section h3 {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+@keyframes glitter {
+  0% {
+    background-position: 0% center;
+  }
+  15% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* region: Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 100;
+  /*translate using scrollY*/
+  transform: translateY(calc(var(--scrollY) * 0.5px));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+/* endregion: Hero */
+
+/* Music Player */
+.music-player {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.music-toggle {
+  background: var(--silver);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Sections */
+section {
+  padding: 80px 0;
+}
+
+.intro,
+.theme-info,
+.gift-suggestions {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#info-section {
+  background-image: linear-gradient(
+    to bottom,
+    var(--silver-light),
+    white
+  );
+  color: var(--primary-black);
+}
+
+#info-section .container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+
+#info-section .container div:first-child {
+  flex: 1;
+  min-width: 300px;
+  width: 100%;
+}
+
+#info-section .container div:last-child {
+  flex: 2;
+  width: 100%;
+}
+
+/* Polaroid Style */
+.polaroid {
+  background: white;
+  padding: 15px;
+  padding-bottom: 30px;
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
+  max-width: 300px;
+  margin: 20px;
+  box-shadow: 5px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.polaroid-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+}
+
+.handwritten {
+  font-family: "Dancing Script", cursive;
+  color: #0066cc;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0px;
+  font-size: 1.2em;
+}
+
+.handwritten del {
+  position: relative;
+  text-decoration: none;
+}
+
+.handwritten del::before {
+  content: "";
+  position: absolute;
+  background-image: url("data:image/svg+xml;utf8,<svg width='300' height='70' xmlns='http://www.w3.org/2000/svg'><path d='M10 35 Q28 22, 45 42 Q62 55, 85 28 Q105 15, 125 45 Q142 58, 165 25 Q185 12, 198 40 Q215 62, 235 22 Q252 10, 265 48 Q278 65, 290 30' stroke='red' stroke-width='7.5' fill='none'/></svg>");
+  background-size: 50% 100%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.handwritten strong {
+  font-size: 1.1em;
+}
+
+
+#vinyl-section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vinyl-item {
+  position: relative;
+  width: 20%;
+  min-width: 250px;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  border-radius: 2px;
+  box-shadow: 5px 2px 6px rgba(0, 0, 0, 0.2),
+  2px 0px 0px 0px rgba(255, 255, 255, 0.1);
+
+  box-shadow: 0px 0px 0px 1000px rgba(0,0,0,0);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vinyl-item:hover {
+  transform: scale(1.3);
+  z-index: 1;
+  box-shadow: 0px 0px 0px 1000px rgba(0,0,0,.6);
+}
+
+.vinyl-item:hover .vinyl-disc {
+  transform: translateX(54%) rotate(0deg);
+}
+
+.vinyl-item:hover .vinyl-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.vinyl-disc {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: url(vinyl.png);
+  background-size: 120%;
+  background-position: center center;
+  transform: translateX(0px) rotate(-60deg);
+  border-radius: 50%;
+  transition: transform 0.6s ease-in-out .2s;
+  z-index: -1;
+  pointer-events: none;
+
+}
+
+.vinyl-image {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.vinyl-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.vinyl-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  text-shadow: 0px 0px 3px black;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+/* Book Item Style */
+#books-section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-item {
+  position: relative;
+  background: var(--silver-light);
+  cursor: pointer;
+  display: block;
+  width: 190px;
+  height: 300px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-item::after {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 100%;
+  background: var(--silver-light);
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: width 0.3s ease, transform 0.3s ease;
+
+  box-shadow: -4px 2px 1px 0px #0000005e inset, 1px 2px 1px 0px #0000005e inset;
+}
+
+.book-item:hover {
+  transform: scale(1.05) perspective(1000px) rotateY(-30deg);
+  box-shadow: 15px 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+.book-item:hover::after {
+  width: 15px;
+  transform: scale(1) perspective(1000px) rotateY(30deg) translateX(100%);
+}
+
+.book-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.book-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book-item .book-title {
+  display: none;
+}
+/* Footer */
+footer {
+  background: var(--primary-black);
+  color: var(--silver);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* Parallax Effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#other-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

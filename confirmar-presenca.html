@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de Presença - 15 Anos da Maria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+  <script src="lista_de_presenca.js"></script>
+
+  <style>
+    :root {
+      --primary-black: #1a1a1a;
+      --silver: #ffffff;
+      --silver-light: #E8E8E8;
+      --accent: #FF4081;
+      --success: #4CAF50;
+      --gold: #FFD700;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--primary-black);
+      color: var(--silver-light);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(192, 192, 192, 0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-bottom: 2px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header h1 {
+      color: var(--silver);
+      font-size: 2.5rem;
+      margin: 0;
+      font-family: 'Monoton', cursive;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      animation: glowText 2s ease-in-out infinite alternate,
+        moonwalk 0.5s ease-in-out infinite alternate;
+      text-shadow: 0 0 10px var(--gold),
+        0 0 20px var(--gold),
+        0 0 30px var(--accent),
+        0 0 40px var(--accent);
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: var(--silver-light);
+      opacity: 0.8;
+    }
+
+    @keyframes glowText {
+      from {
+        text-shadow: 0 0 10px var(--gold),
+          0 0 20px var(--gold),
+          0 0 30px var(--accent),
+          0 0 40px var(--accent);
+      }
+
+      to {
+        text-shadow: 0 0 20px var(--gold),
+          0 0 30px var(--gold),
+          0 0 40px var(--accent),
+          0 0 50px var(--accent),
+          0 0 60px var(--accent);
+      }
+    }
+
+    @keyframes moonwalk {
+      from {
+        transform: translateX(-3px) skewX(-3deg);
+      }
+
+      to {
+        transform: translateX(3px) skewX(3deg);
+      }
+    }
+
+    .guest-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .guest-item {
+      position: relative;
+    }
+
+    .guest-item label {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.05);
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: background 0.1s ease-in-out;
+    }
+
+    .guest-item label:hover {
+      background: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+
+    .guest-item label input {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      margin: 0px;
+    }
+
+    .guest-item label input:checked {
+      display: block;
+    }
+
+    .guest-item:hover:has(input:not(:checked))::after {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      content: 'Clique para confirmar!';
+      font-size: 0.8rem;
+      color: var(--silver-light);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .switch-container input{
+      background-color: transparent;
+      border: none;
+      width: 36px;
+      height: 36px;
+    }
+
+    .guest-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .guest-name .switch {
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 2rem;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #e91e63;
+      transform: translateY(-2px);
+    }
+
+    .success-message {
+      display: none;
+      background-color: var(--success);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .instructions {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .instructions p {
+      margin: 0.5rem 0;
+      line-height: 1.6;
+    }
+
+    .instructions p:first-child {
+      margin-top: 0;
+    }
+
+    .instructions p:last-child {
+      margin-bottom: 0;
+    }
+
+    .instructions strong {
+      color: var(--accent);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Maria Clara <small class="age">15 Anos</small></h1>
+      <p>Confirmação de Presença</p>
+    </header>
+
+    <div class="instructions">
+      <p>Clique nos nomes das pessoas que irão à festa para confirmar a presença.</p>
+    </div>
+
+    <form id="presenceForm">
+      <ul class="guest-list" id="guestList">
+        <!-- Lista de convidados será preenchida via JavaScript -->
+      </ul>
+
+      <button type="submit" class="submit-btn">Confirmar Presença</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      Presença confirmada com sucesso! Obrigado por confirmar.
+    </div>
+  </div>
+
+  <script>
+
+    function removeParenthesis(name) {
+      return name.replace(/\s*\(.*?\)\s*/g, '');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const groupIndex = parseInt(urlParams.get('grupo')) || 0;
+
+      if (groupIndex >= 0 && groupIndex < convidados.length) {
+        const guestList = document.getElementById('guestList');
+        const groupGuests = convidados[groupIndex];
+
+        groupGuests.forEach(guest => {
+          const li = document.createElement('li');
+          li.className = 'guest-item';
+          const guestId = `guest-${removeParenthesis(guest)}`.replace(/\s+/g, '-').toLowerCase();
+          li.innerHTML = `
+                      <label class="guest-name" for="${guestId}">${removeParenthesis(guest)}
+                        <input type="checkbox" id="${guestId}" value="${removeParenthesis(guest)}">
+                      </label>
+                      `;
+
+          guestList.appendChild(li);
+        });
+      }
+
+
+      const form = document.getElementById('presenceForm');
+      const successMessage = document.getElementById('successMessage');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const guestList = document.getElementById('guestList');
+        const guests = guestList.querySelectorAll('input[type="checkbox"]:checked');
+        let guestNames = Array.from(guests).map(guest => guest.value);
+
+        if(guests.length > 1){
+          const last = Array.from(guests).pop();
+          const guestsInFull = Array.from(guests).map(guest => guest.value).join(', ');
+          guestNames = guestsInFull + ' e ' + last;
+        }
+
+        console.log(guestNames);
+
+        // Enviar para o whatsapp
+
+
+
+        const message = `Confirmo a presença de ${guestNames} na festa de 15 anos da Maria Clara.`;
+        // phone_whatsapp_1 = '+5521976026907';
+        // const url = `https://wa.me/${phone_whatsapp_1}?text=${encodeURIComponent(message)}`;
+        // window.open(url, '_blank');
+
+        console.log(message);
+      });
+    });
+  </script>
+</body>
+
+</html>

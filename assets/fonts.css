@@ -1,0 +1,7 @@
+@import url('./Kenao.otf');
+
+@font-face {
+    font-family: 'Kenao';
+    src: url('./Kenao.otf') format('opentype');
+}
+
