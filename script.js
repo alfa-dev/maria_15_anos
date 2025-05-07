@@ -23,7 +23,7 @@ const presenteData = {
     },
     {
       titulo: "Off The Wall (Michael Jackson)",
-      imagem: "assets/vinis/off-the-wall.jpg"
+      imagem: "assets/vinis/otw.jpg"
     },
     {
       titulo: "HIStory (Michael Jackson)",
