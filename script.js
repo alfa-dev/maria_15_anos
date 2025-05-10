@@ -7,7 +7,7 @@ const presenteData = {
     },
     {
       titulo: "Exagerado (Cazuza)",
-      imagem: "assets/vinis/exagerado.jpg"
+      imagem: "assets/vinis/exagerado.jpeg"
     },
     {
       titulo: "Só se for a dois (Cazuza)",
