@@ -51,7 +51,8 @@ const presenteData = {
     },
     {
       titulo: "A Night At The Opera (Queen)",
-      imagem: "assets/vinis/a-night-at-the-opera.jpg"
+      imagem: "assets/vinis/a-night-at-the-opera.jpg",
+      escolhido: true
     }
   ],
   livros: [
@@ -140,9 +141,44 @@ function createVinylItem(vinyl) {
 
   vinylDiscContainer.className = 'vinyl-disc';
 
+  const copyButton = document.createElement('button');
+  copyButton.className = 'copy-button fa-solid fa-copy';
+  copyButton.title = 'Copiar nome';
+  copyButton.setAttribute('aria-label', 'Copiar nome');
+  copyButton.setAttribute('aria-live', 'polite');
+  copyButton.setAttribute('aria-atomic', 'true');
+
+  copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(vinyl.titulo);
+    copyButton.classList.add('fa-check');
+    copyButton.classList.remove('fa-copy');
+    copyButton.classList.add('copied');
+
+    setTimeout(() => {
+      copyButton.classList.remove('fa-check');
+      copyButton.classList.add('fa-copy');
+      copyButton.classList.remove('copied');
+    }, 2000);
+  });
+
+  const searchButton = document.createElement('button');
+  searchButton.className = 'search-button fa-solid fa-magnifying-glass';
+  searchButton.title = 'Pesquisar no Google';
+  searchButton.setAttribute('aria-label', 'Pesquisar no Google');
+  searchButton.setAttribute('aria-live', 'polite');
+  searchButton.setAttribute('aria-atomic', 'true');
+
+  //search button shopping
+  searchButton.addEventListener('click', () => {
+    const searchQuery = `Vinil ${encodeURIComponent(vinyl.titulo)}`;
+    window.open(`https://www.google.com/search?q=${searchQuery}`, '_blank');
+  });
+
   item.appendChild(imageContainer);
   item.appendChild(content);
   item.appendChild(vinylDiscContainer);
+  item.appendChild(copyButton);
+  item.appendChild(searchButton);
   return item;
 }
 
