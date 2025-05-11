@@ -96,7 +96,7 @@ section h3 {
 }
 
 .hero video {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -107,9 +107,19 @@ section h3 {
   pointer-events: none;
   z-index: 100;
   /*translate using scrollY*/
-  transform: translateY(calc(var(--scrollY) * 0.5px));
+  /* animation: scroll linear; */
+  /* animation-timeline: scroll(); */
+  z-index: -1;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(3000px);
+  }
+}
 .hero-content {
   position: relative;
   z-index: 1;
@@ -504,14 +514,6 @@ footer {
   margin-top: 40px;
 }
 
-/* Parallax Effect */
-.parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 #other-section {
   display: flex;
   flex-direction: column;
@@ -519,3 +521,8 @@ footer {
   align-items: center;
 }
 
+#other-section,
+#vinyl-section,
+#books-section {
+  background: var(--primary-black);
+}
