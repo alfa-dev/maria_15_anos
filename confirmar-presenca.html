@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Confirmação de Presença - 15 Anos da Maria</title>
   <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 de Maria Clara - Confirmação de Presença</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="15 Anos de Maria Clara">
+  <meta name="description" content="Confirmação de presença para o aniversário de 15 anos da Maria Clara!">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="15 Anos de Maria Clara">
+  <meta property="og:description" content="Confirmação de presença para o aniversário de 15 anos da Maria Clara!">
+  <meta property="og:image" content="assets/preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="15 Anos de Maria Clara">
+  <meta property="twitter:description" content="Confirmação de presença para o aniversário de 15 anos da Maria Clara!">
+  <meta property="twitter:image" content="assets/preview.png">
+
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/styles.css">
 
   <script src="lista_de_presenca.js"></script>
 
@@ -14,7 +38,7 @@
       --primary-black: #1a1a1a;
       --silver: #ffffff;
       --silver-light: #E8E8E8;
-      --accent: #FF4081;
+      --accent: #40a3ff;
       --success: #4CAF50;
       --gold: #FFD700;
     }
@@ -50,53 +74,12 @@
       overflow: hidden;
     }
 
-    .header h1 {
-      color: var(--silver);
-      font-size: 2.5rem;
-      margin: 0;
-      font-family: 'Monoton', cursive;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      animation: glowText 2s ease-in-out infinite alternate,
-        moonwalk 0.5s ease-in-out infinite alternate;
-      text-shadow: 0 0 10px var(--gold),
-        0 0 20px var(--gold),
-        0 0 30px var(--accent),
-        0 0 40px var(--accent);
-    }
 
     .header p {
       font-size: 1.2rem;
       margin-top: 1rem;
       color: var(--silver-light);
       opacity: 0.8;
-    }
-
-    @keyframes glowText {
-      from {
-        text-shadow: 0 0 10px var(--gold),
-          0 0 20px var(--gold),
-          0 0 30px var(--accent),
-          0 0 40px var(--accent);
-      }
-
-      to {
-        text-shadow: 0 0 20px var(--gold),
-          0 0 30px var(--gold),
-          0 0 40px var(--accent),
-          0 0 50px var(--accent),
-          0 0 60px var(--accent);
-      }
-    }
-
-    @keyframes moonwalk {
-      from {
-        transform: translateX(-3px) skewX(-3deg);
-      }
-
-      to {
-        transform: translateX(3px) skewX(3deg);
-      }
     }
 
     .guest-list {
@@ -185,7 +168,7 @@
     }
 
     .submit-btn:hover {
-      background-color: #e91e63;
+      background-color: var(--success);
       transform: translateY(-2px);
     }
 
@@ -241,7 +224,7 @@
 <body>
   <div class="container">
     <header class="header">
-      <h1>Maria Clara <small class="age">15 Anos</small></h1>
+      <h1>Maria Clara <br><small class="age">15 Anos</small></h1>
       <p>Confirmação de Presença</p>
     </header>
 
@@ -263,14 +246,13 @@
   </div>
 
   <script>
-
     function removeParenthesis(name) {
       return name.replace(/\s*\(.*?\)\s*/g, '');
     }
 
     document.addEventListener('DOMContentLoaded', function () {
       const urlParams = new URLSearchParams(window.location.search);
-      const groupIndex = parseInt(urlParams.get('grupo')) || 0;
+      const groupIndex =  Math.pow(parseInt(urlParams.get('grupo'), 20), 1/4)  || 0;
 
       if (groupIndex >= 0 && groupIndex < convidados.length) {
         const guestList = document.getElementById('guestList');
@@ -290,7 +272,6 @@
         });
       }
 
-
       const form = document.getElementById('presenceForm');
       const successMessage = document.getElementById('successMessage');
 
@@ -298,27 +279,21 @@
         e.preventDefault();
 
         const guestList = document.getElementById('guestList');
-        const guests = guestList.querySelectorAll('input[type="checkbox"]:checked');
-        let guestNames = Array.from(guests).map(guest => guest.value);
+        const guests = Array.from(guestList.querySelectorAll('input[type="checkbox"]:checked'));
+        let guestNames = '';
 
-        if(guests.length > 1){
-          const last = Array.from(guests).pop();
-          const guestsInFull = Array.from(guests).map(guest => guest.value).join(', ');
+        if(guests.length > 1) {
+          const last = guests.pop().value;
+          const guestsInFull = guests.map(guest => guest.value).join(', ');
           guestNames = guestsInFull + ' e ' + last;
+        } else {
+          guestNames = guests[0].value;
         }
 
-        console.log(guestNames);
-
-        // Enviar para o whatsapp
-
-
-
-        const message = `Confirmo a presença de ${guestNames} na festa de 15 anos da Maria Clara.`;
+        const message = `Confirmo a presença de *${guestNames}* na festa de 15 anos da Maria Clara.`;
         // phone_whatsapp_1 = '+5521976026907';
-        // const url = `https://wa.me/${phone_whatsapp_1}?text=${encodeURIComponent(message)}`;
-        // window.open(url, '_blank');
-
-        console.log(message);
+        const url = `https://wa.me/${phone_whatsapp}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
       });
     });
   </script>

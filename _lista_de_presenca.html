@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Presença</title>
+
+  <script src="lista_de_presenca.js"></script>
+  <script src="do_while.js"></script>
+  <script>
+    let count = 0;
+    const listaDePresenca = convidados.map(item => {
+      return {
+        id: (count++ ** 4).toString(20),
+        name: item[0],
+      }
+    });
+
+    const currentUrlOrigin = new URL(window.location.href).origin;
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text);
+    }
+  </script>
+</head>
+<body>
+  <ul>
+    <do-while array="listaDePresenca">
+      <li>
+        <span>{name}</span>
+        <a href="{currentUrlOrigin}/confirmar-presenca.html?grupo={id}">
+          {currentUrlOrigin}/confirmar-presenca.html?grupo={id}
+        </a>
+
+        <button class="copiar-link" onclick="copyToClipboard('{currentUrlOrigin}/confirmar-presenca.html?grupo={id}')">
+          Copiar link
+        </button>
+      </li>
+    </do-while>
+  </ul>
+
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      padding: 3px;
+      margin: 3px;
+    }
+
+    li span {
+      flex: 1;
+    }
+
+    li a {
+      flex: 1;
+    }
+  </style>
+</body>
+</html>

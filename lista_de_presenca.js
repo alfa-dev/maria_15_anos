@@ -74,7 +74,7 @@ const convidados = [
   ['Marcia (espanhol)', 'Jessé'],
   ['Marcia Ramos', 'Victor'],
   ['Victória', 'Rafael'],
-  ['Izabel']
+  ['Izabel'],
   ['Rosa', 'Fabrício'],
   ['Carla', 'Diogo', 'Miguel', 'Gabriel', 'Dona Nalva'],
   ['Val', 'André', 'Amanda'],
