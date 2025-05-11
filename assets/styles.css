@@ -51,6 +51,12 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+h1, h2 {
+  animation: parallax_2 ease-in-out;
+  animation-timeline: scroll();
+  animation-range: 0 1700px;
+}
+
 h3:first-letter {
   font-size: 3.5rem;
 }
@@ -112,14 +118,6 @@ section h3 {
   z-index: -1;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(3000px);
-  }
-}
 .hero-content {
   position: relative;
   z-index: 1;
@@ -218,6 +216,41 @@ section {
   max-width: 300px;
   margin: 20px;
   box-shadow: 5px 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border-bottom: 1px solid var(--silver-light);
+
+  animation: parallax ease-in-out;
+  animation-timeline: scroll();
+}
+
+@keyframes parallax {
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(-150px);
+  }
+}
+
+
+@keyframes parallax_2 {
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(150px);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes parallax {
+    0% {
+      transform: translateY(0px);
+    }
+    30% {
+      transform: translateY(-500px);
+    }
+  }
 }
 
 .polaroid-foto {
@@ -226,6 +259,7 @@ section {
   object-fit: cover;
   aspect-ratio: 1;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .polaroid:hover {
