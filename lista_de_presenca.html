@@ -16,7 +16,8 @@
       }
     });
 
-    const currentUrlOrigin = new URL(window.location.href).origin;
+    const url = new URL(window.location.href);
+    const currentUrlOrigin = url.origin + url.pathname;
 
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text);
