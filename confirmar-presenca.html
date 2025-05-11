@@ -270,6 +270,15 @@
 
           guestList.appendChild(li);
         });
+
+        // muda todos os títulos e meta tags para o nome do grupo
+        document.title = `Confirmação de Presença - ${groupGuests.join(', ')}`;
+        document.querySelector('meta[name="title"]').setAttribute('content', `Confirmação de Presença - ${groupGuests.join(', ')}`);
+        document.querySelector('meta[name="description"]').setAttribute('content', `Confirmação de presença para o aniversário de 15 anos da Maria Clara!`);
+        document.querySelector('meta[property="og:title"]').setAttribute('content', `Confirmação de Presença - ${groupGuests.join(', ')}`);
+        document.querySelector('meta[property="og:description"]').setAttribute('content', `Confirmação de presença para o aniversário de 15 anos da Maria Clara!`);
+        document.querySelector('meta[property="twitter:title"]').setAttribute('content', `Confirmação de Presença - ${groupGuests.join(', ')}`);
+        document.querySelector('meta[property="twitter:description"]').setAttribute('content', `Confirmação de presença para o aniversário de 15 anos da Maria Clara!`);
       }
 
       const form = document.getElementById('presenceForm');
