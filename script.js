@@ -124,7 +124,7 @@ document.getElementById('michael-jackson-foto').addEventListener('click', () => 
 function createVinylItem(vinyl) {
   const item = document.createElement('div');
   const vinylDiscContainer = document.createElement('div');
-  item.className = 'vinyl-item';
+  item.className = `vinyl-item ${vinyl.escolhido ? 'vinyl-item-selected' : ''}`;
 
   const imageContainer = document.createElement('div');
   imageContainer.className = 'vinyl-image';
@@ -136,7 +136,7 @@ function createVinylItem(vinyl) {
   imageContainer.appendChild(img);
 
   const content = document.createElement('div');
-  content.className = 'vinyl-content';
+  content.className = `vinyl-content`;
   content.textContent = vinyl.titulo;
 
   vinylDiscContainer.className = 'vinyl-disc';
@@ -196,7 +196,7 @@ function createBookItem(book) {
   imageContainer.appendChild(img);
 
   const title = document.createElement('h4');
-  title.className = 'book-title';
+  title.className = `book-title ${book.escolhido ? 'book-title-selected' : ''}`;
   title.textContent = book.titulo;
 
   item.appendChild(imageContainer);
