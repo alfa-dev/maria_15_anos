@@ -16,8 +16,8 @@
       }
     });
 
-    const url = new URL(window.location.href);
-    const currentUrlOrigin = url.origin + url.pathname;
+    const href = new URL(window.location.href).href;
+    const currentUrlOrigin = href.split('/').slice(0, -1).join('/');
 
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text);
