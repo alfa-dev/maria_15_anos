@@ -58,7 +58,8 @@ const presenteData = {
   livros: [
     {
       titulo: "Os Sete Maridos de Evelyn Hugo (Taylor Jenkins Reid)",
-      imagem: "assets/livros/evelyn-hugo.webp"
+      imagem: "assets/livros/evelyn-hugo.webp",
+      escolhido: true
     },
     {
       titulo: "Melhor do que nos filmes (Lynn Painter)",
@@ -70,7 +71,8 @@ const presenteData = {
     },
     {
       titulo: "The Woman in Me (Britney Spears)",
-      imagem: "assets/livros/the-woman-in-me.jpeg"
+      imagem: "assets/livros/the-woman-in-me.jpeg",
+      escolhido: true
     },
     {
       titulo: "Moonwalk (Michael Jackson)",
@@ -185,7 +187,7 @@ function createVinylItem(vinyl) {
 // Function to create book items
 function createBookItem(book) {
   const item = document.createElement('div');
-  item.className = 'book-item';
+  item.className = `book-item ${book.escolhido ? 'book-item-selected' : ''}`;
 
   const imageContainer = document.createElement('div');
   imageContainer.className = 'book-image';
@@ -196,7 +198,7 @@ function createBookItem(book) {
   imageContainer.appendChild(img);
 
   const title = document.createElement('h4');
-  title.className = `book-title ${book.escolhido ? 'book-title-selected' : ''}`;
+  title.className = 'book-title';
   title.textContent = book.titulo;
 
   item.appendChild(imageContainer);

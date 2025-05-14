@@ -38,7 +38,7 @@ const convidados = [
   ['Lúcia'],
   ['Renata'],
   ['Kelly'],
-  ['Cristiane', 'Heitor'],
+  ['Cristiane'],
   ['Jaqueline', 'Convidado (Filha da Jaqueline)'],
   ['Alessandro', 'Fabiana', 'Convidado (Filho da Fabiana)'],
   ['Natália', 'Fernando'],
@@ -83,7 +83,8 @@ const convidados = [
   ['Marcinha', 'André', 'Convidado (Filha)'],
   ['Renato', 'Convidado 1 (Esposa)', 'Convidado 2 (Filho)'],
   ['Thassia', 'Leandro', 'Anna Beatriz', 'Lorena'],
-  ['João']
+  ['João'],
+  ['Janaina', 'Mae', 'Convidado (Filha)'],
 ];
 
 
