@@ -84,7 +84,8 @@ const convidados = [
   ['Renato', 'Convidado 1 (Esposa)', 'Convidado 2 (Filho)'],
   ['Thassia', 'Leandro', 'Anna Beatriz', 'Lorena'],
   ['João'],
-  ['Janaina', 'Mae', 'Convidado (Filha)'],
+  ['Janaina', 'Mae'],
+  ['Julia']
 ];
 
 
