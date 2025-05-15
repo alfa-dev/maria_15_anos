@@ -63,7 +63,8 @@ const presenteData = {
     },
     {
       titulo: "Melhor do que nos filmes (Lynn Painter)",
-      imagem: "assets/livros/melhor-que-nos-filmes.webp"
+      imagem: "assets/livros/melhor-que-nos-filmes.webp",
+      escolhido: true
     },
     {
       titulo: "Até o verão terminar (Colleen Hoover)",
