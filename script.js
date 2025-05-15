@@ -67,7 +67,8 @@ const presenteData = {
     },
     {
       titulo: "Até o verão terminar (Colleen Hoover)",
-      imagem: "assets/livros/ate-o-verao-terminar.webp"
+      imagem: "assets/livros/ate-o-verao-terminar.webp",
+      escolhido: true
     },
     {
       titulo: "The Woman in Me (Britney Spears)",
@@ -80,7 +81,8 @@ const presenteData = {
     },
     {
       titulo: "Todas as suas imperfeições (Colleen Hoover)",
-      imagem: "assets/livros/todas-suas-imperfeicoes.webp"
+      imagem: "assets/livros/todas-suas-imperfeicoes.webp",
+      escolhido: true
     },
     {
       titulo: "Uma segunda chance (Colleen Hoover)",
@@ -92,7 +94,13 @@ const presenteData = {
     },
     {
       titulo: "O Lado Feio do Amor (Colleen Hoover)",
-      imagem: "assets/livros/lado-feio-do-amor.jpg"
+      imagem: "assets/livros/lado-feio-do-amor.jpg",
+      escolhido: true
+    },
+    {
+      titulo: "A descoberta do mundo (Júlia)",
+      imagem: "assets/livros/a-descoberta-do-mundo.jpg",
+      escolhido: true
     }
   ],
   outros: [
