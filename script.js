@@ -91,7 +91,8 @@ const presenteData = {
     },
     {
       titulo: "9 de Novembro (Colleen Hoover)",
-      imagem: "assets/livros/9-de-novembro.jpg"
+      imagem: "assets/livros/9-de-novembro.jpg",
+      escolhido: true
     },
     {
       titulo: "O Lado Feio do Amor (Colleen Hoover)",
