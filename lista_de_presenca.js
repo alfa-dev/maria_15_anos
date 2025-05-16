@@ -85,7 +85,8 @@ const convidados = [
   ['Thassia', 'Leandro', 'Anna Beatriz', 'Lorena'],
   ['João'],
   ['Janaina', 'Mae'],
-  ['Julia']
+  ['Julia'],
+  ['Heloísa', 'Eduarda']
 ];
 
 
