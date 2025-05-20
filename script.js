@@ -78,7 +78,8 @@ const presenteData = {
     },
     {
       titulo: "Moonwalk (Michael Jackson)",
-      imagem: "assets/livros/moonwalk.jpg"
+      imagem: "assets/livros/moonwalk.jpg",
+      escolhido: true
     },
     {
       titulo: "Todas as suas imperfeições (Colleen Hoover)",
