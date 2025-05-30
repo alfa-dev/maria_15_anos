@@ -17,7 +17,7 @@ const convidados = [
   ['Marlon dos Santos'],
   ['Alessandra Uchoa', 'Convidado (Mãe da Alessandra)'],
   ['Patricia Avelino', 'Pedro Avelino'],
-  ['Eunice', 'Convidado (Marido da Eunice)'],
+  ['Eunice', 'José'],
   ['Ana Carolina Esteves', 'Alan', 'Mariana', 'Ana Luiza', 'Haniel'],
   ['Dona Cidalia', 'Sr Luiz'],
   ['Elane Esteves', 'Aluízio', 'Nathalia', 'Danilo'],
@@ -86,7 +86,8 @@ const convidados = [
   ['João'],
   ['Janaina', 'Mae'],
   ['Julia'],
-  ['Heloísa', 'Eduarda']
+  ['Heloísa', 'Eduarda'],
+  ['Cida', 'Ademar']
 ];
 
 

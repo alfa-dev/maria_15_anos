@@ -19,11 +19,13 @@ const presenteData = {
     },
     {
       titulo: "Bad (Michael Jackson)",
-      imagem: "assets/vinis/bad.jpg"
+      imagem: "assets/vinis/bad.jpg",
+      escolhido: true
     },
     {
       titulo: "Off The Wall (Michael Jackson)",
-      imagem: "assets/vinis/otw.jpg"
+      imagem: "assets/vinis/otw.jpg",
+      escolhido: true
     },
     {
       titulo: "HIStory (Michael Jackson)",
