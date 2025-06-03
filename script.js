@@ -41,7 +41,8 @@ const presenteData = {
     },
     {
       titulo: "O Tempo não Pára (Ao vivo) (Cazuza)",
-      imagem: "assets/vinis/o-tempo-nao-para.jpg"
+      imagem: "assets/vinis/o-tempo-nao-para.jpg",
+      escolhido: true
     },
     {
       titulo: "Maior Abandonado (Barão Vermelho)",
@@ -90,7 +91,8 @@ const presenteData = {
     },
     {
       titulo: "Uma segunda chance (Colleen Hoover)",
-      imagem: "assets/livros/uma-segunda-chance.jpg"
+      imagem: "assets/livros/uma-segunda-chance.jpg",
+      escolhido: true
     },
     {
       titulo: "9 de Novembro (Colleen Hoover)",
