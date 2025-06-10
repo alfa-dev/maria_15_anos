@@ -106,7 +106,8 @@ const presenteData = {
     },
     {
       titulo: "A descoberta do mundo (Júlia)",
-      imagem: "assets/livros/a-descoberta-do-mundo.jpg"
+      imagem: "assets/livros/a-descoberta-do-mundo.jpg",
+      escolhido: true
     }
   ],
   outros: [
